@@ -12,6 +12,7 @@ endif()
 add_definitions(-Dunix -Dlinux -std=c++11)
 
 find_package(OpenGL REQUIRED)
+set(SDL_BUILDING_LIBRARY TRUE)
 find_package(SDL REQUIRED)
 find_package(SDL_image REQUIRED)
 find_package(SDL_ttf REQUIRED)
@@ -58,7 +59,7 @@ include_directories(
     ${GLEW_INCLUDE_DIRS}
     ${FREETYPE_INCLUDE_DIRS}
     ${X11_INCLUDE_DIR}
-    ${CURSES_INCLUDE_DIR}
+    /usr/include/ncursesw
 )
 
 add_library(graphics SHARED ${SOURCES})
